@@ -1,0 +1,22 @@
+\documentclass[letterpaper]{article}
+\usepackage{tikz}
+% Set tiny margins so it fits on one sheet
+\usepackage[top=20mm,left=5mm]{geometry}
+\usetikzlibrary{calendar}
+\begin{document}
+% No page numbers
+\pagestyle{empty}
+\begin{tikzpicture}
+\small\sffamily
+\colorlet{darkgreen}{green!50!black}
+% Create a running 12 month calendar starting from the current month
+\calendar[dates=\year-\month-01 to  \year-\month-01+365,week list,
+month label left vertical,month yshift=0pt,
+month text=\textcolor{darkgreen}{\%mt}]
+if (weekend) [black!50]
+% Regular holidays are red
+if (equals=01-01,equals=07-04,equals=12-24,equals=12-25,equals=12-31]) [red!50]
+% Holidays that vary by year are red
+if (equals=2012-04-06,equals=2012-04-08,equals=2012-05-28,equals=2012-09-03,equals=2012-11-22) [red!50];
+\end{tikzpicture}
+\end{document}
