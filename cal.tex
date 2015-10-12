@@ -8,11 +8,13 @@
 \pagestyle{empty}
 \begin{tikzpicture}
 \small\sffamily
+% I set colors to 50% throughout so they will work on a black and white printer
 \colorlet{darkgreen}{green!50!black}
 % Create a running 12 month calendar starting from the current month
 \calendar[dates=\year-\month-01 to \year-\month-01+365,week list,
 month label left vertical,month yshift=0pt,
 month text=\textcolor{darkgreen}{\%mt}]
+% Weekends are grey
 if (weekend) [black!50]
 % Regular holidays are red
 if (equals=01-01,
