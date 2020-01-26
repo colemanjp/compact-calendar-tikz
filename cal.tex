@@ -3,11 +3,14 @@
 % Set tiny margins so it fits on one sheet
 \usepackage[top=10mm,left=5mm]{geometry}
 \usetikzlibrary{calendar}
+% Get rid of blank page 1
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
 \begin{document}
 % No page numbers
 \pagestyle{empty}
 \begin{tikzpicture}
-\small\sffamily
+\normalsize\sffamily
 % I set colors to 50% throughout so they will work on a black and white printer
 \colorlet{darkgreen}{green!50!black}
 % Create a running 12 month calendar starting from the current month
@@ -23,39 +26,15 @@ if (equals=01-01,
     equals=12-25,
     equals=12-31]) [red!50]
 % Holidays that vary by year are red
-if (equals=2012-04-06,
-    equals=2012-04-08,
-    equals=2012-05-28,
-    equals=2012-09-03,
-    equals=2012-11-22, 
-    equals=2012-12-26,
-    equals=2012-12-27,
-    equals=2012-12-28) [red!50]
-if (equals=2013-01-21,
-    equals=2013-03-29,
-    equals=2013-03-31,
-    equals=2013-05-27,
-    equals=2013-09-02,
-    equals=2013-11-28,
-    equals=2013-11-29, 
-    equals=2013-12-26,
-    equals=2013-12-27,
-    equals=2013-12-30) [red!50]
-if (equals=2014-01-20,
-    equals=2014-04-18,
-    equals=2014-04-20,
-    equals=2014-05-26,
-    equals=2014-09-01,
-    equals=2014-11-27,
-    equals=2014-11-28,
-    equals=2014-12-26,
-    equals=2014-12-29,
-    equals=2014-12-30) [red!50]
-if (equals=2018-01-15,
-    equals=2018-03-30,
-    equals=2018-04-01
-    equals=2018-05-28,
-    equals=2018-09-03,
-    equals=2018-11-22) [red!50];
+if (equals=2020-01-20,
+    equals=2020-04-10,
+    equals=2020-05-25,
+    equals=2020-09-07,
+    equals=2020-11-26,
+    equals=2021-01-18,
+    equals=2021-04-02,
+    equals=2021-05-31,
+    equals=2021-09-06,
+    equals=2021-11-25) [red!50];
 \end{tikzpicture}
 \end{document}
