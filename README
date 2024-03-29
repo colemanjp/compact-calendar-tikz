@@ -1,1 +1,3 @@
 Latex/Tikz clone of the Excel "Compact Calendar" at http://davidseah.com/compact-calendar/
+
+Optional events.tex will include text to the right of the calendar.
